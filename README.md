@@ -18,6 +18,8 @@ The project has been tested against Win 7,10, Server 2012, and Server 2016.  Old
 
 By default, if you're attempting to dump hives from your local system, you'll need to be running from a high-integrity context.  However, this is not necessary when targeting remote systems.
 
+This currently supports SAM + SECURITY registry hive dumping to retrieve cached credential data.  However, it does not support NTDS.dit parsing / dcsync yet.  If you're looking for dcsync functionality in a .Net project I recommend [sharpkatz](https://github.com/b4rtik/SharpKatz).
+
 If a system is configured to disallow RPC over TCP (RPC over named pipe is required -- this is not a default setting) there is a 21s delay before Windows will fall back to RPC/NP, but will still allow the connection. This appears to be a limitation of using API calls that leverage the SCManager to remotely bind to services.  
   
  # Credits

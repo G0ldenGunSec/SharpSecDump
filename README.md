@@ -1,5 +1,5 @@
 # SharpSecDump
- .Net port of the remote SAM + LSA Secrets dumping functionality of impacket's secretsdump.py.  By default runs in the context of the current user.
+ .Net port of the remote SAM + LSA Secrets dumping functionality of impacket's secretsdump.py.  By default runs in the context of the current user.  Please only use in environments you own or have permission to test against :)
  
  # Usage
  `SharpSecDump.exe -target=192.168.1.15 -u=admin -p=Password123 -d=test.local`
@@ -15,6 +15,8 @@
 
 # Notes
 The project has been tested against Win 7,10, Server 2012, and Server 2016.  Older versions (win 2003 / xp) may not work with this tool.
+
+By default, if you're attempting to dump hives from your local system, you'll need to be running from a high-integrity context.  However, this is not necessary when targeting remote systems.
 
 If a system is configured to disallow RPC over TCP (RPC over named pipe is required -- this is not a default setting) there is a 21s delay before Windows will fall back to RPC/NP, but will still allow the connection. This appears to be a limitation of using API calls that leverage the SCManager to remotely bind to services.  
   

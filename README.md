@@ -16,7 +16,7 @@
 # Notes
 The project has been tested against Win 7,10, Server 2012, and Server 2016.  Older versions (win 2003 / xp) may not work with this tool.
 
-If a system is configured to disallow RPC over TCP (RPC over named pipe is required -- this is not a default setting) there is a 21s delay before Windows will fall back to RPC/NP, but will still allow the connection. This is a limitation of using API calls that leverage the SCManager to remotely bind to services.  
+If a system is configured to disallow RPC over TCP (RPC over named pipe is required -- this is not a default setting) there is a 21s delay before Windows will fall back to RPC/NP, but will still allow the connection. This appears to be a limitation of using API calls that leverage the SCManager to remotely bind to services.  
   
  # Credits
 This code is a port of functionality from [impacket](https://github.com/SecureAuthCorp/impacket) by [@agsolino](https://twitter.com/agsolino) and [pypykatz](https://github.com/skelsec/pypykatz) by [@skelsec](https://twitter.com/SkelSec).  All credit goes to them for the original steps to parse and decrypt info from the registry hives.

